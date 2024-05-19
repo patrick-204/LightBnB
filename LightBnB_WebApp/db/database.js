@@ -141,13 +141,8 @@ queryString += `GROUP BY properties.id`;
 
 // Add query to filter by min rating if exists
 if (options.minimum_rating) {
-  if (queryParams.length > 0) {
-    queryString += ` HAVING `;
-  } else {
-    queryString += ` WHERE `;
-  }
   queryParams.push(options.minimum_rating);
-  queryString += `avg(property_reviews.rating) >= $${queryParams.length} `;
+  queryString += ` HAVING avg(property_reviews.rating) >= $${queryParams.length} `;
 }
 
 queryParams.push(limit);
