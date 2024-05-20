@@ -137,7 +137,9 @@ if (options.minimum_price_per_night && options.maximum_price_per_night) {
   queryString += `cost_per_night BETWEEN $${queryParams.length - 1} AND $${queryParams.length} `;
 }
 
-queryString += `GROUP BY properties.id`;
+queryString += `
+GROUP BY properties.id
+`;
 
 // Add query to filter by min rating if exists
 if (options.minimum_rating) {
@@ -151,7 +153,7 @@ ORDER BY cost_per_night DESC
 LIMIT $${queryParams.length};
 `;
 
-console.log(queryString, queryParams);
+// console.log(queryString, queryParams);
 
 return pool
   .query(queryString, queryParams)
@@ -170,10 +172,47 @@ return pool
  * @return {Promise<{}>} A promise to the property.
  */
 const addProperty = function (property) {
-  const propertyId = Object.keys(properties).length + 1;
-  property.id = propertyId;
-  properties[propertyId] = property;
-  return Promise.resolve(property);
+  // console.log(property);
+
+  const queryParams = [];
+  const keys = [];
+  const values = [];
+ 
+  for (const key in property) {
+    // Make sure value is valid
+    if (property[key] !== null && property[key] !== undefined) {
+      keys.push(key);
+      values.push(property[key]);
+      queryParams.push(property[key]); // Add property value to queryParams
+    }
+  }
+
+  // placeholders for value array
+  const placeholders = [];
+
+  for (let i = 0; i < values.length; i++) {
+    placeholders.push(`$${i + 1}`);
+  }
+
+  const valuesQuery = placeholders.join(', ');
+
+  let queryString = `
+  INSERT INTO properties (${keys.join(', ')})
+  VALUES (${valuesQuery})
+  RETURNING *;
+  `;
+
+  console.log(queryString, queryParams);
+
+  return pool
+  .query(queryString, queryParams)
+  .then((result) => {
+    return result.rows;
+  })
+  .catch((err) => {
+    console.error(err.message);
+  });
+
 };
 
 module.exports = {
