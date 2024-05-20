@@ -88,15 +88,16 @@ Lighthouse BnB is an app that will revolutionize the travel industry. It will al
 
 Follow the below steps to run the LightBnB project:
 1. Clone this repository: git clone https://github.com/patrick-204/LightBnB/tree/master
-2. Install dependencies using the `npm install` command.
-3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:3000/>.
-4. Go to <http://localhost:3000/> in your browser.
-5. Sign up by selecting the Sign Up option and entering a unique username, email, and password.
-6. Sign in using the Sign In button and your email and password.
-7. Search for a listing using the Search option.
-8. Create a new listing by selecting Create Listing.
-9. View your listings by selecting My Listings.
-10. View your reservations by selecting My Reservations.
+2. Navigate to the LightBnB_WebApp directory.
+3. Install dependencies using the `npm install` command.
+4. Start the web server using the `npm run local` command. The app will be served at <http://localhost:3000/>.
+5. Go to <http://localhost:3000/> in your browser.
+6. Sign up by selecting the Sign Up option and entering a unique username, email, and password.
+7. Sign in using the Sign In button and your email and password.
+8. Search for a listing using the Search option.
+9. Create a new listing by selecting Create Listing.
+10. View your listings by selecting My Listings.
+11. View your reservations by selecting My Reservations.
 
 ## Dependencies
 
