@@ -211,6 +211,7 @@ const addProperty = function (property) {
   })
   .catch((err) => {
     console.error(err.message);
+    return Promise.reject(new Error('Something went wrong'));
   });
 
 };
