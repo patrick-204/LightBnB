@@ -1,5 +1,35 @@
 # LightBnB
 
+Lighthouse BnB is an app that will revolutionize the travel industry. It will allow homeowners to rent out their homes to people on vacation, creating an alternative to hotels and bed and breakfasts!
+
+## Screenshots
+
+### Home Page Pre-Login
+![Home Page Pre-Login](/images/Light_BnB_Home_Page_Pre-Login.png)
+
+### Sign Up Page
+![Sign Up Page](/images/Light_BnB_Sign_Up.png)
+
+### Home Page Post-Login
+![Home Page Post-Login](/images/Light_BnB_Home_Page_Post-Login.png)
+
+### Filter Properties
+![Search](/images/Light_BnB_Search.png)
+
+### View Reservations
+![My Reservations](/images/Light_BnB_My_Reservations.png)
+
+### Create a Listing for a Property
+![Create a Listing](/images/Light_BnB_Create_Listing.png)
+
+### View a Created Listing
+![View My Listing](/images/Light_BnB_My_Listings.png)
+
+## Features
+
+- Users can view property information, book reservations, view their reservations, and write reviews.
+- Users can filter search results for listings.
+
 ## Project Structure
 
 ```
@@ -53,3 +83,34 @@
 * `routes` contains the router files which are responsible for any HTTP requests to `/users/something` or `/api/something`. 
 * `styles` contains all of the sass files. 
 * `server.js` is the entry point to the application. This connects the routes to the database.
+
+## Getting Started
+
+Follow the below steps to run the LightBnB project:
+1. Clone this repository: git clone https://github.com/patrick-204/LightBnB/tree/master
+2. Install dependencies using the `npm install` command.
+3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:3000/>.
+4. Go to <http://localhost:3000/> in your browser.
+5. Sign up by selecting the Sign Up option and entering a unique username, email, and password.
+6. Sign in using the Sign In button and your email and password.
+7. Search for a listing using the Search option.
+8. Create a new listing by selecting Create Listing.
+9. View your listings by selecting My Listings.
+10. View your reservations by selecting My Reservations.
+
+## Dependencies
+
+- bcrypt 3.0.8 or above
+- cookie-session 1.4.0 or above
+- nodemon 1.19.4 or above
+- express
+- pg 8.11.5 or above
+- node 5.10.x or above
+
+## Technology
+
+- HTML
+- JavaScript
+- CSS
+- PostgreSQL
+- jQuery
